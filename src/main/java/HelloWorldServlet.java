@@ -13,6 +13,11 @@ public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello, World!</h1>");
+        String thingToBeCreated = request.getParameter("name");
+        if (thingToBeCreated == null) {
+            thingToBeCreated = "World";
+        }
+        String output = String.format("<h1>Hello, %S!<h1>", thingToBeCreated);
+        out.println(output);
     }
 }

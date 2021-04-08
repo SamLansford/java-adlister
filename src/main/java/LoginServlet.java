@@ -12,12 +12,13 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         resp.setContentType("text/htm");
         String output = "";
         output += "<h1>Login Page";
         output += "<form>";
-        output += "<input name='username' placeholder='Rnter username' />";
+        output += "<input name='username' placeholder='Enter username' />";
         output += "<button>Submit</button>";
         output += "</form>";
         out.println(output);
