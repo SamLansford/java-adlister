@@ -24,6 +24,7 @@
 <html>
 <head>
     <title>Login Page</title>
+    <jsp:include page="partials/main.html"/>
 </head>
 <body>
 
