@@ -2,7 +2,8 @@
 <%@ page import="contact.Contact" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="java.lang.reflect.Array" %><%--
+<%@ page import="java.lang.reflect.Array" %>
+<%@ page import="java.util.Arrays" %><%--
   Created by IntelliJ IDEA.
   User: samlansford
   Date: 4/9/21
@@ -11,16 +12,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%
-    List<Contact> contacts = new ArrayList<>();
-    contacts.add(new Contact( 1,"Sam", "sam@gmail.com","123 Sam Way", "4322145954", false));
-    contacts.add(new Contact( 2,"Carlos", "carlos@gmail.com","123 Carlos Way, TX", "1231234123", true));
-    contacts.add(new Contact( 3,"Micheal", "micheal@gmail.com","123 Micheal Way, TX", "1231232424", false));
-    contacts.add(new Contact( 4,"Jacob", "jacob@gmail.com","123 Jacob Way", "2341345234", true));
+<%--<%--%>
+<%--    List<Contact> contacts = new ArrayList<>(Arrays.asList(--%>
+<%--            new Contact( 1,"Sam", "sam@gmail.com","123 Sam Way, TX", "4322145954", false),--%>
+<%--            new Contact( 2,"Carlos", "carlos@gmail.com","123 Carlos Way, TX", "1231234123", true),--%>
+<%--            new Contact( 3,"Micheal", "micheal@gmail.com","123 Micheal Way, TX", "1231232424", false),--%>
+<%--            new Contact( 4,"Jacob", "jacob@gmail.com","123 Jacob Way", "2341345234", true)--%>
+<%--    ));--%>
 
-    request.setAttribute("contacts", contacts);
+<%--    request.setAttribute("contacts", contacts);--%>
 
-%>
+<%--%>--%>
 <html>
 <head>
     <jsp:include page="partials/head.jsp">
@@ -28,10 +30,16 @@
     </jsp:include>
 
     <style>
-        tr{
+        table, tr, th {
+            margin: auto;
+            border: 1px solid black;
             padding: 20px;
-            margin: 15px;
-            border: 20px;
+            background-color: whitesmoke;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightyellow;
         }
     </style>
 
