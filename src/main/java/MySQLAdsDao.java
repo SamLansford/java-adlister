@@ -1,15 +1,17 @@
+import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.jdbc.Driver;
-
 public class MySQLAdsDao implements Ads {
 
-    Connection connection = null;
+   private Connection connection = null;
 
     public MySQLAdsDao(Config config){
+        System.out.println(config.getUrl());
+        System.out.println(config.getPassword());
+        System.out.println(config.getUser());
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
@@ -24,9 +26,11 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> all(){
+        System.out.println(connection);
         List<Ad> ads = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
+            System.out.println(connection);
             ResultSet rs = statement.executeQuery("SELECT * FROM ads");
             while(rs.next()){
 
