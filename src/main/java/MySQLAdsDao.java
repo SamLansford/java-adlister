@@ -17,8 +17,8 @@ public class MySQLAdsDao implements Ads {
                     config.getUser(),
                     config.getPassword()
             );
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
         }
     }
 
